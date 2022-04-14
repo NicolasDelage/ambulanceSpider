@@ -21,7 +21,7 @@ class AmbulanceCompanyNamesSpider(scrapy.Spider):
     def parse(self, response):
         urls = response.xpath('//div[@class="listeEntreprise"]/div/h3/div/a/@href').getall()
 
-        for url in urls[0:1]:
+        for url in urls:
             first_url_part = url.split('/')[1]
 
             second_url_part = url.split('/')[-1]
