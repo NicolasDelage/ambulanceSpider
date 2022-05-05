@@ -22,6 +22,7 @@ class AmbulanceCompanyNamesSpider(scrapy.Spider):
         urls = response.xpath('//div[@class="listeEntreprise"]/div/h3/div/a/@href').getall()
 
         for url in urls:
+            print('url', url)
             first_url_part = url.split('/')[1]
 
             second_url_part = url.split('/')[-1]
@@ -56,7 +57,8 @@ class AmbulanceCompanyNamesSpider(scrapy.Spider):
 
             yield scrapy.Request(url='http://www.google.com/search?q=%40' + website_name + '+contact',
                                  callback=self.parse_email,
-                                 meta={'company_name': response.meta['company_name'], 'website_url': 'https://www.' + website_name})
+                                 meta={'company_name': response.meta['company_name'], 'website_url': 'https://www.' +
+                                                                                                     website_name})
 
     def parse_email(self, response):
         print('PARSE EMAIL')

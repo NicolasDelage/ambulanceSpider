@@ -18,15 +18,6 @@ NEWSPIDER_MODULE = 'ambulance.spiders'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
-# ROTATING_PROXY_LIST = [
-#     '51.195.76.214',
-#     '176.31.129.223',
-#     '62.210.119.138',
-#     '165.225.76.150',
-#     '188.165.59.127',
-#     '62.75.229.155',
-# ]
-
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
 
@@ -36,7 +27,7 @@ ROBOTSTXT_OBEY = False
 # DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 16
-# CONCURRENT_REQUESTS_PER_IP = 16
+CONCURRENT_REQUESTS_PER_IP = 4
 
 # Disable cookies (enabled by default)
 # COOKIES_ENABLED = False
